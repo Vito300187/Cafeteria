@@ -16,12 +16,12 @@ class UsersController < ApplicationController
   #   @users = User.create
   # end
   #
-  # def create
-  #   @users = User.new
-  # end
+  def create
+    @users = User.create(params[:user])
+  end
   #
   # def update
-  #   @users = User.update_attributes
+  #   @users = User.update_attributes(params[:user])
   # end
   #
   # def destroy
