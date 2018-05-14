@@ -18,5 +18,3 @@ class User < ApplicationRecord
     self.update_attributes(admin: true) if User.count == 1
   end
 end
-
-# User.count == 1
