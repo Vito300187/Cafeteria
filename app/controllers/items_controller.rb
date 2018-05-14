@@ -1,11 +1,35 @@
 class ItemsController < ApplicationController
 
-  before_action :get_item, only: [:edit, :destroy, :update]
   before_action :check_auth, only: [:edit, :destroy, :update]
+  before_filter :find_item, only: [:show, :edit, :update, :destroy] # используем before_filter
+  # для замены повторяющего метода и вынесения переменной экземпляра класса в одтельный метод find_item
 
-  def get_item
-    @item = Item.find(params[:id])
+  def index
+    @items = Items.all
   end
+
+  def show
+  end
+
+  def new
+    @item = Item.new
+  end
+
+  def create
+    @item = Item.create(params[:item])
+  end
+
+  def edit
+  end
+  #
+  def update
+    @item.update_attributes(params[:item])
+  end
+  #
+  def destroy
+  end
+  #
+  private
 
   def check_auth
     if session[user_id] != @item.user_id
@@ -14,29 +38,11 @@ class ItemsController < ApplicationController
     end
   end
 
-  def index
-    render text: "Item index"
+  def check_if_admin
+    render text: "Access denied", status: 403 unless params[:admin]
   end
 
-  def show
+  def find_item
     @item = Item.find(params[:id])
-  end
-
-  def new
-    render text: "Item new"
-  end
-
-
-  def create
-    render text: "Item create"
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
   end
 end
