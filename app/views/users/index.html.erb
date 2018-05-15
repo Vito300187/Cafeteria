@@ -1,8 +1,19 @@
-<h1>Список всех пользователей
-  <h2><% @users.each do |i| %>
-  <%= i.name %>
-  <%= i.email %>
-  <%= i.admin %><br>
+<h1>Список всех пользователей</h1>
+<table width="300" cellpadding="5" cellspacing="0">
+  <tr>
+    <td width="50">Имя</td>
+    <td width="50">Почта</td>
+    <td width="50">Админ</td>
+  </tr>
+</table>
+<% @users.each do |i| %>
+
+  <table width="300" cellpadding="5" cellspacing="0">
+    <tr>
+      <td width="50"><%= link_to i.name %></td>
+      <td width="50"><%= i.email %></td>
+      <td width="50"><%= i.admin %></td>
+    </tr>
+  </table>
+
   <%  end %>
-  </h2>
-</h1>

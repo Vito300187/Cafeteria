@@ -1,0 +1,14 @@
+<H1> Здесь будет товар по экшену show </H1>
+
+<% @item.each do |i| %>
+  <div class="container mt-5">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-6" style="border: 1px solid black">
+  <%= i.item %>
+  <%= i.price %>
+  <%= i.description %><br>
+      </div>
+    </div>
+  </div>
+<% end %>
+
