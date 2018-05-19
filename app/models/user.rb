@@ -4,9 +4,8 @@ class User < ApplicationRecord
   has_one :cart # связь - Юзер имеет одну корзину
 
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  # devise :database_authenticatable, :registerable,
-  #        :recoverable, :rememberable, :validatable
+  # :confirmable, :lockable, :timeoutable and :omniauthable  :recoverable
+  devise :database_authenticatable, :registerable, :rememberable, :validatable
 
   after_create :update_admin # Коллбек проверки и проставления администраторских прав первому
   # созданному юзеру, вызывается после сохранения в базу.
