@@ -19,11 +19,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-ui-rails'
 gem 'devise', '~> 4.2'
 gem 'carrierwave', '~> 0.11.2'
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'paperclip', '~> 5.2.0'
 gem 'mini_magick', '~> 4.8'
 gem 'fog-aws'
 gem 'factory_girl', '~> 4.9'
-gem 'simple_form', '~> 4.0'
+gem 'simple_form', '~> 4.0', '>= 4.0.1'
 
 
 group :development, :test do
