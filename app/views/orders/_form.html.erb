@@ -1,0 +1,12 @@
+<% form_for @order do %>
+
+  <div class="col-6">
+    <H5>Заказ создан</H5><%= @order.created_at.strftime("%d-%^b-%Y") %>
+  </div>
+
+
+  <%= select_day(5)%>
+
+
+
+<% end %>

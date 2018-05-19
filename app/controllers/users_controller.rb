@@ -1,11 +1,11 @@
 # Контроллер должен показывать
 # - Страницу пользователя
 # - Создавать пользователя
-# - Педактировать свою страницу
+# - Редактировать свою страницу
 
 class UsersController < ApplicationController
 
- # before_action :find_user, only: [:show, :edit, :update, :destroy] # используем before_filter
+ before_action :find_user, only: [:show, :edit, :update, :destroy] # используем before_action
   # для замены повторяющего метода и вынесения переменной экземпляра класса в одтельный метод
 
   def index
@@ -13,37 +13,43 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.all
   end
 
   def new
-    @users = User.new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to @user
+    else
+      render :new
+    end
   end
 
   def edit
-    @users = User.create
   end
-  #
-  # def create
-  #   @users = User.create(user_params)
-  # end
-  #
-  # def update
-  #   @users = User.update_attributes(user_params)
-  # end
-  #
-  # def destroy
-  #   @users = User.destroy
-  # end
-  #
-  #
-  # private
-  # def find_user
-  #   @user = User.find(params[:id])
-  # end
-  #
-  # def user_params
-  #   params.require(:item).permit(:email, :name)
-  # end
 
+  def update
+    if @user.update(user_params)
+      redirect_to find_user
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @user.destroy
+      redirect_to new_user_path, notice: "User delete!"
+  end
+
+ private
+  def find_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password)
+  end
 end

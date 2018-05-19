@@ -1,18 +1,12 @@
-<div class="container" style="margin-top: 300px">
+<div class="container" style="margin-top: 150px">
+  <h4 class="text-center">Для осуществления заказа необходимо войти <br> либо
+    зарегестрироваться</h4>
   <div class="row justify-content-center">
     <div class="col-8 col-md-4">
       <form>
-        <h4 class="text-center">Для осуществления заказа необходимо войти</h4>
-        <div class="form-group">
-          <input type="email" class="form-control text-center" id="exampleInputName"
-                 aria-describedby="emailHelp" placeholder="Ваше имя">
-          <small id="emailHelpName" class="form-text text-muted text-center">Имя используется
-            для заказа</small>
-        </div>
-
         <div class="form-group">
           <input type="email" class="form-control text-center" id="exampleInputEmail1"
-                 aria-describedby="emailHelp" placeholder="Электронную почту">
+                 aria-describedby="emailHelp" placeholder="Электронная почта">
           <small id="emailHelpLogin" class="form-text text-muted text-center">Не волнуйтесь, мы
             не делаем рассылку писем</small>
         </div>
@@ -24,8 +18,13 @@
             легкий, но запоминающийся пароль</small>
         </div>
 
-        <div class="row justify-content-center">
-          <button type="submit" class="btn btn btn-dark">Войти</button>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+              <button type="submit" class="btn btn-green">Войти</button>
+                <%= link_to "Регистрация", new_user_path, class:"btn btn-dark"  %>
+            </div>
+          </div>
         </div>
       </form>
     </div>

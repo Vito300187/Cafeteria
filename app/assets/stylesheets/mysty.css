@@ -1,0 +1,27 @@
+.photo {
+ -webkit-filter:blur(3px);
+  margin-top: 100px;
+  width:45%;
+  opacity: 0.3;
+  z-index: -1;
+  position: absolute;
+}
+
+.btn-green {
+  background: limegreen;
+  color: #F7F7F7;
+}
+
+.btn-green:hover {
+  background: green;
+}
+
+.edit {
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+.edit:hover{
+  text-decoration: none;
+  color: orangered;
+}

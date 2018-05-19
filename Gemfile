@@ -16,9 +16,15 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'jquery-ui-rails'
 gem 'devise', '~> 4.2'
 gem 'carrierwave', '~> 0.11.2'
-gem 'jquery-ui-rails'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'mini_magick', '~> 4.8'
+gem 'fog-aws'
+gem 'factory_girl', '~> 4.9'
+gem 'simple_form', '~> 4.0'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

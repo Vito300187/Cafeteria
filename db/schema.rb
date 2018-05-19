@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180514195307) do
     t.datetime "updated_at", null: false
   end
 
+  #todo Сделать поле с номером заказа, для вывода изображения в общем списке админу
   create_table "orders", force: :cascade do |t|
     t.string "value"
     t.float "price"
