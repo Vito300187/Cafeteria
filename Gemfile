@@ -22,9 +22,7 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'paperclip', '~> 5.2.0'
 gem 'mini_magick', '~> 4.8'
 gem 'fog-aws'
-gem 'factory_girl', '~> 4.9'
-gem 'simple_form', '~> 4.0', '>= 4.0.1'
-
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -8,7 +8,7 @@
         <form>
           <div class="form-group">
             <%= f.text_field :name, class:"form-control text-center",
-                              placeholder:"Ваше имя"%>
+                             placeholder:"Ваше имя"%>
           </div>
 
           <div class="form-group">
@@ -17,18 +17,18 @@
           </div>
 
           <div class="form-group">
-            <%= f.password_field :encrypted_password, class:"form-control text-center",
-                              placeholder:"Пароль"%>
+            <%= f.password_field :password, class:"form-control text-center",
+                                 placeholder:"Пароль"%>
           </div>
 
           <div class="container">
             <div class="row justify-content-center">
-                <div class="col-6">
-                  <%= f.submit class:"btn btn-green", value:"Обновить"%>
-                </div>
-                <div class="col-6">
-                  <%= link_to "Вернуться", :back, class:"btn btn-dark"%>
-                </div>
+              <div class="col-6">
+                <%= f.submit class:"btn btn-green", value:"Обновить"%>
+              </div>
+              <div class="col-6">
+                <%= link_to "Вернуться", :back, class:"btn btn-dark"%>
+              </div>
             </div>
           </div>
         </form>

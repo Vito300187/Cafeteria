@@ -9,9 +9,8 @@ class User < ApplicationRecord
 
   after_create :update_admin # Коллбек проверки и проставления администраторских прав первому
   # созданному юзеру, вызывается после сохранения в базу.
-  validates :name, :email, presence: true #Имя должно быть обязательно
+  #validates :name, :email, presence: true #Имя должно быть обязательно
   # заполнено
-
 
   private
   #Метод меняет значение первого зарегестрированного пользователя на true for admin

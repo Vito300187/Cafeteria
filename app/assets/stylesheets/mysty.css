@@ -25,3 +25,7 @@
   text-decoration: none;
   color: orangered;
 }
+
+li {
+  list-style: none;
+}
