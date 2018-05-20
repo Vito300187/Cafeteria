@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: :show_
+  before_action :authenticate_user!, except: :show
   before_action :find_item, only: [:show, :edit, :update, :destroy] # используем before_action
   # для замены повторяющего метода и вынесения переменной экземпляра класса в одтельный метод
 

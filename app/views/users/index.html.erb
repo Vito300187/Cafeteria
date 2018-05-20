@@ -1,4 +1,7 @@
 <h1 style="text-align: center">Список всех пользователей</h1>
+
+<!--Если пользователь не зарегестрирован, то просмотр пользователей не доступен-->
+<% if user_signed_in? %>
 <div class="container">
   <div class="row justify-content-center mb-3">
     <div class="col-8 col-md-2 text-center" style="font-weight: bold">Имя</div>
@@ -19,4 +22,5 @@
     </div>
   </div>
 </div>
+<% end %>
 <% end %>
