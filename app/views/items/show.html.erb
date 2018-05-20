@@ -7,15 +7,29 @@
         <h3 class="text-center"><%= @item.item
       %></h3></h6>
 
-      <div class="container">
+      <!--Если пользователь не зарегестрирован,
+            подробная информация и редактирование не доступны-->
+      <% if user_signed_in? %>
+        <div class="container">
         <div class="row justify-content-center mt-5">
           <div class="col-12" style="text-align: center">
             <H5>Товар создан</H5>
             <%= @item.created_at.strftime("%d-%b-%Y") %>
           </div>
-          <%= link_to "Редактировать ", edit_item_path, class:"edit" %>
-          <%= link_to "Удалить", @item, class:"edit", method: :delete,
-                                        data: {confirm: "Вы уверены ?"}%>
+
+          <!-- Если пользователь не зарегестрирован, он не может корректировать и удалять товары-->
+          <% if current_user.admin? %>
+            <%= link_to "Редактировать ", edit_item_path, class:"edit" %>
+            <%= link_to "Удалить", @item, class:"edit", method: :delete,
+                                          data: {confirm: "Вы уверены ?"}%>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+      <div class="container">
+        <div class="row justify-content-center mt-5">
+          <%= image_tag @item.image.url(:thumb) if @item.image? %>
         </div>
       </div>
 

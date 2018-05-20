@@ -1,79 +1,91 @@
-Форма стилизованного меню
-
-
-<h1 style="text-align: center">Меню на день</h1>
-<div class="container mt-5">
-  <div class="row justify-content-md-center">
-    <div class="col-12 col-md-6">
-      <h5 style="text-align: center">Горячие блюда</h5>
-      <table class="table">
-        <tr>
-          <td>Суп гороховый</td>
-          <td>300</td>
-        </tr>
-        <tr>
-          <td>Солянка</td>
-          <td>350</td>
-        </tr>
-        <tr>
-          <td>Борщ</td>
-          <td>400</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="col-12 col-md-6">
-      <h5  style="text-align: center">Вторые блюда</h5>
-      <table class="table">
-        <tr>
-          <td>Грибной жульен</td>
-          <td>300</td>
-        </tr>
-        <tr>
-          <td>Мясной рулет «Два в одном»</td>
-          <td>350</td>
-        </tr>
-        <tr>
-          <td>Птица с апельсинами духовке</td>
-          <td>400</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="col-12 col-md-6">
-      <h5  style="text-align: center">Салаты</h5>
-      <table class="table">
-        <tr>
-          <td>Закусочный</td>
-          <td>200</td>
-        </tr>
-        <tr>
-          <td>Салат-коктейль «Гламур»</td>
-          <td>250</td>
-        </tr>
-        <tr>
-          <td>Оливье</td>
-          <td>270</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="col-12 col-md-6">
-      <h5  style="text-align: center">Напитки</h5>
-      <table class="table">
-        <tr>
-          <td>Домашний лимонад</td>
-          <td>100</td>
-        </tr>
-        <tr>
-          <td>Имбирный напиток</td>
-          <td>120</td>
-        </tr>
-        <tr>
-          <td>Безалкогольный глинтвейн с яблоками</td>
-          <td>150</td>
-        </tr>
-      </table>
-    </div>
-  </div>
+<% if @item.errors.any? %>
+<div class="alert alert-danger">
+  <h5><%= t('common.errors') %></h5>
+  <ul>
+    <% post.errors.full_messages.each do |message|%>
+      <li> <% message %> </li>
+    <% end %>
+  </ul>
 </div>
+
+<% end %>
+
+
+
+<!--Форма стилизованного меню-->
+<!--<h1 style="text-align: center">Меню на день</h1>-->
+<!--<div class="container mt-5">-->
+  <!--<div class="row justify-content-md-center">-->
+    <!--<div class="col-12 col-md-6">-->
+      <!--<h5 style="text-align: center">Горячие блюда</h5>-->
+      <!--<table class="table">-->
+        <!--<tr>-->
+          <!--<td>Суп гороховый</td>-->
+          <!--<td>300</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Солянка</td>-->
+          <!--<td>350</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Борщ</td>-->
+          <!--<td>400</td>-->
+        <!--</tr>-->
+      <!--</table>-->
+    <!--</div>-->
+
+    <!--<div class="col-12 col-md-6">-->
+      <!--<h5  style="text-align: center">Вторые блюда</h5>-->
+      <!--<table class="table">-->
+        <!--<tr>-->
+          <!--<td>Грибной жульен</td>-->
+          <!--<td>300</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Мясной рулет «Два в одном»</td>-->
+          <!--<td>350</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Птица с апельсинами духовке</td>-->
+          <!--<td>400</td>-->
+        <!--</tr>-->
+      <!--</table>-->
+    <!--</div>-->
+
+    <!--<div class="col-12 col-md-6">-->
+      <!--<h5  style="text-align: center">Салаты</h5>-->
+      <!--<table class="table">-->
+        <!--<tr>-->
+          <!--<td>Закусочный</td>-->
+          <!--<td>200</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Салат-коктейль «Гламур»</td>-->
+          <!--<td>250</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Оливье</td>-->
+          <!--<td>270</td>-->
+        <!--</tr>-->
+      <!--</table>-->
+    <!--</div>-->
+
+    <!--<div class="col-12 col-md-6">-->
+      <!--<h5  style="text-align: center">Напитки</h5>-->
+      <!--<table class="table">-->
+        <!--<tr>-->
+          <!--<td>Домашний лимонад</td>-->
+          <!--<td>100</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Имбирный напиток</td>-->
+          <!--<td>120</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Безалкогольный глинтвейн с яблоками</td>-->
+          <!--<td>150</td>-->
+        <!--</tr>-->
+      <!--</table>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->

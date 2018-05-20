@@ -1,10 +1,5 @@
-# Контроллер должен показывать
-# - Страницу пользователя
-# - Создавать пользователя
-# - Редактировать свою страницу
-
 class ItemsController < ApplicationController
-
+  before_action :authenticate_user!, except: :show_
   before_action :find_item, only: [:show, :edit, :update, :destroy] # используем before_action
   # для замены повторяющего метода и вынесения переменной экземпляра класса в одтельный метод
 
@@ -22,8 +17,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to items_path
+      redirect_to items_path, success: 'Товар успешно создан!'
     else
+      flash.now[:danger] = 'Пользователь не создан'
       render :new
     end
   end
@@ -54,6 +50,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:price, :item)
+    params.require(:item).permit(:price, :item, :image)
   end
 end

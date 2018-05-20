@@ -1,10 +1,9 @@
 class OrdersController < ApplicationController
 
-
   before_action :find_order, only: [:show, :edit, :update, :destroy] # используем before_action
   # для замены повторяющего метода и вынесения переменной экземпляра класса в одтельный метод
 
-  def index
+  def order
     @orders = Order.all
   end
 
@@ -32,15 +31,6 @@ class OrdersController < ApplicationController
       redirect_to @order
     else
       render :edit
-    end
-  end
-
-  def destroy
-    @order.destroy
-    if @order.destroy
-      redirect_to index
-    else
-      render :show
     end
   end
 

@@ -18,7 +18,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'jquery-ui-rails'
 gem 'devise', '~> 4.2'
-gem 'carrierwave', '~> 0.11.2'
+gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 gem 'paperclip', '~> 5.2.0'
 gem 'mini_magick', '~> 4.8'
 gem 'fog-aws'

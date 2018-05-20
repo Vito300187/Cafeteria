@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180514195307) do
+ActiveRecord::Schema.define(version: 20180520115059) do
 
   create_table "carts", force: :cascade do |t|
     t.integer "user_id"
@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20180514195307) do
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
-  #todo Сделать поле с номером заказа, для вывода изображения в общем списке админу
   create_table "orders", force: :cascade do |t|
     t.string "value"
     t.float "price"

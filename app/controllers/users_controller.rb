@@ -1,10 +1,4 @@
-# Контроллер должен показывать
-# - Страницу пользователя
-# - Создавать пользователя
-# - Редактировать свою страницу
-
 class UsersController < ApplicationController
-
  before_action :find_user, only: [:show, :edit, :update, :destroy] # используем before_action
   # для замены повторяющего метода и вынесения переменной экземпляра класса в одтельный метод
 
@@ -20,9 +14,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.create(user_params)
     if @user.save
-      redirect_to @user
+      redirect_to user_path
     else
       render :new
     end
@@ -33,7 +27,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to find_user
+      redirect_to user_path
     else
       render :edit
     end
@@ -50,6 +44,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:users).permit( :name, :email, :password )
   end
 end

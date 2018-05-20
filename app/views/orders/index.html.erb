@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row justify-content-center"></div>
 </div>
-<% @orders.each do |order| %>
+<% orders_path do |order| %>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-8 col-md-4 text-center">Номер заказа <%= link_to order.value %></div>

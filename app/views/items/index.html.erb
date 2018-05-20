@@ -7,24 +7,34 @@
 </div>
 
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mb-5">
     <div class="col-8 col-md-3 text-center" style="font-weight: bold">Наименование</div>
     <div class="col-8 col-md-3 text-center" style="font-weight: bold">Цена</div>
-    <div class="col-8 col-md-3 text-center" style="font-weight: bold"></div>
+    <div class="col-8 col-md-3 text-center" style="font-weight: bold">Сделать заказ</div>
   </div>
 </div>
 
+<!--Для каждого блока нужно вывести название товара и цену-->
 <% @items.each do |item| %>
   <div class="container">
     <div class="row justify-content-center mt-3">
       <div class="col-8 col-md-3 text-center"><%= link_to item.item, item, class:"edit"%></div>
       <div class="col-8 col-md-3 text-center"><%= item.price %> <br></div>
+
+     <!-- Если пользователь не зарегестрирован, он не может нажать на кнопку сделать заказ-->
+      <% if user_signed_in? %>
       <div class="col-8 col-md-3 text-center"><button type="submit" class="btn btn-dark">
         <%="Заказать"%></button></div>
+        <% else %>
+        <div class="col-8 col-md-3 text-center"></div>
+      <% end %>
     </div>
   </div>
-  <% end %>
+<% end %>
 
+<!--Только администратор может добавлять и редактировать товары-->
+<% if current_user.admin? %>
 <div class="row justify-content-center">
   <%= link_to "Добавить товар", new_item_path, class:"btn btn-primary", value:"Обновить"%>
 </div>
+<% end %>

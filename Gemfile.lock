@@ -52,12 +52,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
-    carrierwave (0.11.2)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
+    carrierwave (1.2.2)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-      mimemagic (>= 0.3.0)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     climate_control (0.2.0)
@@ -110,7 +108,6 @@ GEM
       multi_json (>= 1.2)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
-    json (2.1.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -253,7 +250,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara (~> 2.13)
-  carrierwave (~> 0.11.2)
+  carrierwave (~> 1.2, >= 1.2.2)
   coffee-rails (~> 4.2)
   devise (~> 4.2)
   fog-aws

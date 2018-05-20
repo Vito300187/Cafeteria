@@ -1,10 +1,9 @@
 <div class="container" style="margin-top: 150px">
   <div class="row justify-content-center">
     <div class="col-8 col-md-4">
-
       <% @user %>
       <h6 class="text-center">Имя пользователя:</h6>
-
+          <!--Проверка не введенного значения имени, подстовляется заглушка, для пользователя-->
         <% if @user.name.blank? %>
           <h3 class="text-center">Самый лучший гость <%= rand(10000) %></h3><br>
         <% else %>
@@ -15,23 +14,27 @@
         <h3 class="text-center"><%= @user.email %></h3>
 
       <!-- todo Блок проверки администратора вынести в паршил -->
+
+      <!--Проверка пользователя на администратора-->
       <% if @user.admin %>
         <h6 class="text-center" style="color: cornflowerblue">Пользователь администратор</h6>
       <% end %>
 
+      <!--Если пользователь не зарегестрирован,
+            подробная информация и редактирование не доступны-->
+      <% if user_signed_in? %>
       <div class="container">
         <div class="row justify-content-center mt-5">
           <div class="col-12" style="text-align: center">
             <H5>Пользователь создан</H5>
             <%= @user.created_at.strftime("%d-%b-%Y") %>
           </div>
-          <%= link_to "Редактировать ", edit_user_path, class:"edit" %>
-          <%= link_to "Удалить", user_path, class:"edit", method: :delete, data: {
-              confirm: "Вы уверены ?" }
-
-          %>
-       </div>
+          <%= link_to "Редактировать ", edit_user_registration_path, class:"edit" %>
+          <%= link_to "Удалить", @user, class:"edit", method: :delete, data: {
+              confirm: "Вы уверены ?" } %>
+        </div>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
