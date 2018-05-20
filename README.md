@@ -1,24 +1,33 @@
-# README
+# Меню с заказом
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Программа мини-интернет магазина, по заказу товара и оформлении его через корзину покупок. 
+В данной программе использованы gems:
 
-Things you may want to cover:
+####Carrierwave
+Для загрузки фотографий и картинок в определенном формате.
 
-* Ruby version
+####Mini_magick
+Для изменения размера картинки на лету и преобразования в нужном размере для 
+соответствующей страницы.
 
-* System dependencies
+####Fog-aws - Gem для хранения картинок в облачном хранилище.
 
-* Configuration
+####Bootstrap 4
+свободный набор инструментов для создания сайтов
+ и веб-приложений. Включает в себя HTML- и CSS-шаблоны оформления для типографики, веб-форм, кнопок, 
+ меток, блоков навигации и прочих компонентов веб-интерфейса, включая JavaScript-расширения.
 
-* Database creation
+####Simple_form 
+Этот плагин поможет упростить работу с формами
 
-* Database initialization
+####Devise
+Gem предоставляющий возможности для аутентификации в rails-приложениях. 
 
-* How to run the test suite
+Дополнительно реализована функция, автоматического присвоения прав администратора, первому 
+зарегестрированному пользователю, внутри модели user.
 
-* Services (job queues, cache servers, search engines, etc.)
+Работу программы можно протестировать по [Ссылке](https://vito300187.github.io/test_code/.)
 
-* Deployment instructions
-
-* ...
+Для запуска необходимо:
+- Ruby >= 2.0.0
+- Rails == 5.0
