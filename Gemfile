@@ -18,10 +18,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-ui-rails'
 gem 'devise', '~> 4.2'
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
+gem 'paperclip', '~> 5.2.0'
 gem 'mini_magick', '~> 4.8'
 gem 'fog-aws'
 gem 'simple_form'
-# gem 'paperclip', '~> 5.2.0'
 
 group :development, :test do
   gem 'sqlite3'
