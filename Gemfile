@@ -20,7 +20,7 @@ gem 'devise', '~> 4.2'
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 gem 'paperclip', '~> 5.2.0'
 gem 'mini_magick', '~> 4.8'
-gem 'fog-aws'
+gem 'fog'
 gem 'simple_form'
 
 group :development, :test do
