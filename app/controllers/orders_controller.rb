@@ -44,3 +44,18 @@ class OrdersController < ApplicationController
   end
 
 end
+
+
+# Для выбора даты и вывода заказа на общую сумму за текущий день!
+#
+# #Для вывода заказа товара у клиента
+# Order.where(name: 'dave').each do |order|
+#   order.pay_type = "Заказ товара"
+#   order.save
+# end
+#
+#
+# #Для вывода заказов
+# Order.where(name: 'dave').each do |order|
+#   puts order.amount
+# end

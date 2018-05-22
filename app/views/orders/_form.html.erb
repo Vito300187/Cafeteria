@@ -9,4 +9,13 @@
 
 
 
+  # Для выбора даты и вывода заказа на общую сумму за текущий день!
+
+
+  Order.where(name: 'dave').each do |order|
+  order.pay_type = "Заказ товара"
+  order.save
+  end
+
+
 <% end %>

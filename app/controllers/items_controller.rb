@@ -17,9 +17,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to items_path, success: 'Товар успешно создан!'
+      redirect_to items_path, notice: 'Товар успешно создан!'
     else
-      flash.now[:danger] = 'Пользователь не создан'
+      flash.now[:danger] = 'Товар не создан'
       render :new
     end
   end
@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to @item
+      redirect_to @item, notice: 'Товар успешно обновлен!'
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     if @item.destroy
-      redirect_to items_path
+      redirect_to items_path notice: 'Товар успешно удален!'
     else
       render :show
     end
