@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+ - 2.5.0
+os: osx
+branches:
+ only:
+ - master
