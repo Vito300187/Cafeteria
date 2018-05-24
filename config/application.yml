@@ -11,7 +11,7 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 #SECRET_KEY_BASE: ""
-#AWS_ACCESS_KEY_ID: "AKIAJYAZLSG4GSNDBY3A"
-#AWS_SECRET_ACCESS_KEY: "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"
-#S3_BUCKET_NAME: "cafeteria-jetruby"
-#AWS_REGION: "us-west-2"
+#AWS_ACCESS_KEY_ID: ""
+#AWS_SECRET_ACCESS_KEY: ""
+#S3_BUCKET_NAME: "cafeteria"
+#AWS_REGION: ""

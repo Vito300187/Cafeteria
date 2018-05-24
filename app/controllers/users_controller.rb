@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.create(user_paramcd cafeterizs)
     if @user.save
       redirect_to @user, notice: 'Пользователь успешно создан'
     else
@@ -47,3 +47,4 @@ class UsersController < ApplicationController
     params.require(:user).permit( :name, :email, :password )
   end
 end
+
